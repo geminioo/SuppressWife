@@ -2,16 +2,16 @@
 
 var prefabEnemy : Transform;
 var mainCam : Camera;
-var a = 1f;
 static var side : float;
+var randomGen : float;
+var rate : int;
 
 function Start () {
-	InvokeRepeating("Gen",1,1);
-	Debug.Log("start");
+	Invoke("Gen",1);
 }
 
 function Gen(){
-	var randomY = Random.Range(-2.2f,1.5f);
+	var randomY = Random.Range(-2.2f,1f);
 	var randomSide =  Random.Range(0f,1f);
 	if(randomSide >=0.5){
 		side = 1;
@@ -21,15 +21,23 @@ function Gen(){
 		side = 0;
 		Instantiate(prefabEnemy,Vector3(mainCam.transform.position.x-10f,randomY,0),Quaternion.identity);
 	}
-	if(a <= 3){
-		a += 0.1;
-	}
-	// Debug.Log(a);
 }
 
 function Update(){
-	var randomGen = Random.Range(1,70);
-	if(randomGen>1 && randomGen<a){
+	randomGen = Random.Range(1,200);
+	if(Score.point < 10){
+		rate = 2;
+	}
+	else if(Score.point < 20){
+		rate = 2.4;
+	}
+	else if(Score.point < 30){
+		rate = 2.6;
+	}
+	else{
+		rate = 2.8;
+	}
+	if(randomGen < rate){
 		Invoke("Gen",1);
 	}
 }

@@ -1,4 +1,5 @@
 ﻿#pragma strict
+
 static var point : int;
 var scoreStyle : GUISkin;
 
