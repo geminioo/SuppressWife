@@ -1,5 +1,8 @@
 ﻿#pragma strict
 
+var homeSkin1 : GUISkin;
+var homeSkin2 : GUISkin;
+
 function Start () {
 
 }
@@ -9,11 +12,12 @@ function Update () {
 }
 
 function OnGUI(){
-	if(GUI.Button(new Rect(Screen.width/4, Screen.height/2, 150 ,30), "Start")){
+	GUI.skin = homeSkin1;
+	if(GUI.Button(new Rect(Screen.width/4+20, Screen.height/2+40, 150 ,30), "")){
 		Application.LoadLevel("CameraScreen");
 	}
-	if(GUI.Button(new Rect(Screen.width/4, Screen.height/2+50, 150 ,30), "Leaderboard")){
-		//Application.LoadLevel("Leaderboard");
-		Debug.Log("asdf");
+	GUI.skin = homeSkin2;
+	if(GUI.Button(new Rect(Screen.width/4+20, Screen.height/2+75, 150 ,30), "")){
+		Application.LoadLevel("LeaderboardScreen");
 	}
 }
