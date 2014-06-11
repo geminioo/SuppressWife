@@ -17,5 +17,5 @@ function OnGUI(){
 	// scoreStyle.fontSize = 20;
 	// scoreStyle.alignment = TextAnchor.UpperRight;
 	GUI.skin = scoreStyle;
-    GUI.Label(Rect(Screen.width/2,Screen.height/2-98f,100,50),point+"");
+    GUI.Label(Rect(Screen.width/2+60f,Screen.height/4-100f,100,50),point+"");
 }

@@ -1,37 +1,53 @@
 ﻿#pragma strict
 
-var guiSkin: GUISkin;
 var nativeVerticalResolution = 1200.0;
 var isPaused : boolean = false;
-
+var pauseSkin : GUISkin;
+var inPauseSkin : GUISkin;
 
 // var positionPauseY =
 
 var windowRect : Rect;
  
 function Start(){
-	windowRect = Rect(Screen.width/7, Screen.height/6, 230 ,150);
+	windowRect = Rect(Screen.width/6+30, Screen.height/6+10, 480 ,300);
+    // GUI.Button (Rect(Screen.width/2-100, Screen.height/4, 500 ,500),"");
+
 }
  
 function Update()
 {
+  // GUI.Button (Rect(Screen.width/2-100, Screen.height/4, 500 ,500),"");
+  // print("Update");
+  // if(GUI.Button (Rect(Screen.width/2-100, Screen.height/4, 500 ,500),"") && !isPaused)
+  //   // if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && Input.GetTouch(0).position.x >= 1150 && !isPaused)
+  //  {
+  //     print("Paused");
+  //     Time.timeScale = 0.0;
+  //     isPaused = true;
+   // }
+   // else if(Input.GetKeyDown("escape") && isPaused)
+   // {
+   //    print("Unpaused");
+   //    Time.timeScale = 1.0;
+   //    isPaused = false;    
+   // } 
+}
  
-     if(Input.GetKeyDown("escape") && !isPaused)
+function OnGUI ()
+{
+  GUI.skin = pauseSkin;
+
+  // GUI.Button (Rect(Screen.width/2-100, Screen.height/4, 500 ,500),"");
+  print("Update");
+  if(GUI.Button (Rect(Screen.width-130, Screen.height/4-100, 70, 70),"") && !isPaused)
+    // if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && Input.GetTouch(0).position.x >= 1150 && !isPaused)
    {
       print("Paused");
       Time.timeScale = 0.0;
       isPaused = true;
    }
-   else if(Input.GetKeyDown("escape") && isPaused)
-   {
-      print("Unpaused");
-      Time.timeScale = 1.0;
-      isPaused = false;    
-   } 
-}
- 
-function OnGUI ()
-{
+
  
  	Debug.Log("OOOOOOO");
 
@@ -44,63 +60,33 @@ function OnGUI ()
  
    //  // Our GUI is laid out for a 1920 x 1200 pixel display (16:10 aspect). The next line makes sure it rescales nicely to other resolutions.
    //  GUI.matrix = Matrix4x4.TRS (Vector3(0, 0, 0), Quaternion.identity, Vector3 (Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1)); 
- 
-   //  if(isPaused)
-   //  {
-   //    // RenderSettings.fogDensity = 1;
-   //    if(GUI.Button (Rect((Screen.width)/2,480,140,70), "Quit"))
-   //    {
-   //       print("Quit!");
-   //       Application.Quit();
-   //    }
-   //    if(GUI.Button (Rect((Screen.width)/2,560,140,70), "Restart"))
-   //    {
-   //       print("Restart");
-   //       Application.LoadLevel("SomeLevelHere");
-   //       Time.timeScale = 1.0;
-   //       isPaused = false;
-   //    }
-   //    if(GUI.Button (Rect((Screen.width)/2,640,140,70), "Continue"))
-   //    {
-   //       print("Continue");
-   //       Time.timeScale = 1.0;
-   //       isPaused = false;   
-   //    }
-   // } 
 }
 
 function DoMyWindow (windowID : int) {
-
-	// if (GUI.Button (Rect(Screen.width/7, Screen.height/6+10, 140 ,30), "Hello World"))
-	// 	Application.LoadLevel("FirstScreen");
-	// if (GUI.Button (Rect(Screen.width/7, Screen.height/6+50, 140 ,30), "Hello World"))
-	// 	Application.LoadLevel("FirstScreen");
-    
-    GUI.skin = guiSkin;
-
+  GUI.skin = inPauseSkin;
     // Our GUI is laid out for a 1920 x 1200 pixel display (16:10 aspect). The next line makes sure it rescales nicely to other resolutions.
     // GUI.matrix = Matrix4x4.TRS (Vector3(0, 0, 0), Quaternion.identity, Vector3 (Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1)); 
  
 	// RenderSettings.fogDensity = 1;
-	if(GUI.Button (Rect(Screen.width/7, Screen.height/6-10, 140 ,30), "Quit"))
+	if(GUI.Button (Rect(Screen.width/6+20, Screen.height/6, 180 ,30), "Quit"))
 	{
 	 print("Quit!");
 	 		Application.LoadLevel("FirstScreen");
 
 	 // Application.Quit();
 	}
-	if(GUI.Button (Rect(Screen.width/7, Screen.height/6+30, 140 ,30), "Restart"))
+	if(GUI.Button (Rect(Screen.width/6+20, Screen.height/6+40, 180 ,30), "Restart"))
 	{
 	 print("Restart");
 	 // Application.LoadLevel("SomeLevelHere");
 	 // Time.timeScale = 1.0;
 	 // isPaused = false;
 	}
-	if(GUI.Button (Rect(Screen.width/7, Screen.height/6+70, 140 ,30), "Continue"))
+	if(GUI.Button (Rect(Screen.width/6+20, Screen.height/6+80, 180 ,30), "Continue"))
 	{
 	 print("Continue");
-	 // Time.timeScale = 1.0;
-	 // isPaused = false;   
+	 Time.timeScale = 1.0;
+	 isPaused = false;   
 	}
 }
 // if(GUI.Button (Rect((Screen.width)/2,640,140,70), "Continue", "button2"))
