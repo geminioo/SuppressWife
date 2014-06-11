@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b371be0f059fb42a59159e0a47d2632f
+guid: 1dcdb95bf4aa142ceabc78da6d450084
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -30,27 +30,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 250
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: coinSprite_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 189
-        width: 62
-        height: 63
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
