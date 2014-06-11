@@ -20,6 +20,7 @@ function OnTriggerEnter2D(col : Collider2D){
 		if(GameObject.Find("coinSprite_9")){
 			playerHeart = GameObject.Find("coinSprite_9");
 			playerHeart.SendMessage("PlayerHeart");
+			checkDie = 1;
 		}
 		else if(GameObject.Find("coinSprite_8")){
 			playerHeart = GameObject.Find("coinSprite_8");
@@ -52,7 +53,7 @@ function OnTriggerEnter2D(col : Collider2D){
 		else if(GameObject.Find("coinSprite_1")){
 			playerHeart = GameObject.Find("coinSprite_1");
 			playerHeart.SendMessage("PlayerHeart");
-			checkDie = 1;
+			// checkDie = 1;
 		}
 	}
 }
