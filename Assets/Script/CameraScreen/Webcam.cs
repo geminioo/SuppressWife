@@ -2,8 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class Webcam : MonoBehaviour {
-
+	
 	private WebCamTexture webcam;
+	public GUISkin cameraSkin;
 	public Texture2D pic = null;
 
     void Start(){
@@ -14,7 +15,8 @@ public class Webcam : MonoBehaviour {
 	
     void OnGUI(){
 		if (webcam.isPlaying){
-			if(GUI.Button(new Rect(Screen.width/2-50,Screen.height*2/3,Screen.width/5,Screen.height/10), "Take Picture")){
+			GUI.skin = cameraSkin;
+			if(GUI.Button(new Rect(Screen.width*5/6,Screen.height*8/19,Screen.width/8,Screen.height/5), "")){
 				pic = new Texture2D(webcam.width,webcam.height);
 				pic.SetPixels(webcam.GetPixels());
 				pic.Apply();
@@ -36,9 +38,9 @@ public class Webcam : MonoBehaviour {
 				GameObject.Find("Face").gameObject.GetComponent<SpriteRenderer>().sprite = Sprite.Create(pic, new Rect(0, 0, pic.width, pic.height), new Vector2(0.5f, 0.5f));
 			}*/
         }
-		if (GUI.Button(new Rect(Screen.width/2-50,Screen.height*2/3+50,Screen.width/5,Screen.height/10), "Back")){
+		/*if (GUI.Button(new Rect(Screen.width/2-50,Screen.height*2/3+50,Screen.width/5,Screen.height/10), "Back")){
 			webcam.Stop();
 			Application.LoadLevel("FirstScreen");
-        }
+        }*/
 	}
 }
