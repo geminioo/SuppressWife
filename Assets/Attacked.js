@@ -9,7 +9,7 @@ function Start () {
 function Update () {
 	if(Input.GetKey(KeyCode.Space)){
 		// count++;
-		
+		Score.point++;
 		Debug.Log(count);
 	}
 }
