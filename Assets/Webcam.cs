@@ -20,6 +20,8 @@ public class Webcam : MonoBehaviour {
 				pic.Apply();
 				renderer.material.mainTexture = pic;
 				GameObject.Find("Face").gameObject.GetComponent<SpriteRenderer>().sprite = Sprite.Create(pic, new Rect(0, 0, pic.width, pic.height), new Vector2(0.5f, 0.5f));
+				webcam.Stop();
+				Application.LoadLevel("FirstScreen");
 			}/*
             if (GUI.Button(new Rect(Screen.width*57/100,Screen.height/2,Screen.width*20/100,Screen.height/10),"Pause")){
                 webcam.Pause();
@@ -34,8 +36,9 @@ public class Webcam : MonoBehaviour {
 				GameObject.Find("Face").gameObject.GetComponent<SpriteRenderer>().sprite = Sprite.Create(pic, new Rect(0, 0, pic.width, pic.height), new Vector2(0.5f, 0.5f));
 			}*/
         }
-		/*if (GUI.Button(new Rect(Screen.width*10/100,Screen.height*74/100,Screen.width*20/100,Screen.height/10), "Back")){
-
-        }*/	
+		if (GUI.Button(new Rect(Screen.width/2-50,Screen.height*2/3+50,Screen.width/5,Screen.height/10), "Back")){
+			webcam.Stop();
+			Application.LoadLevel("FirstScreen");
+        }
 	}
 }

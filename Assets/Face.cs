@@ -12,4 +12,10 @@ public class Face : MonoBehaviour {
     void Start() {
 		faceSprite = gameObject.GetComponent<SpriteRenderer>();
     }
+
+	void Update(){
+		if(Application.loadedLevelName == "FirstScreen"){
+			Destroy(GameObject.Find("Face"));
+		}
+	}
 }
