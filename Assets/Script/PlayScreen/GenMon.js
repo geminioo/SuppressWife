@@ -16,26 +16,28 @@ function Gen(){
 	if(randomSide >=0.5){
 		side = 1;
 		Instantiate(prefabEnemy,Vector3(mainCam.transform.position.x+10f,randomY,0),Quaternion.identity);
+		// Instantiate(prefabEnemy,Vector3(mainCam.transform.position.x+10f,mainCam.transform.position.y,0),Quaternion.identity);
 	}
 	else{
 		side = 0;
 		Instantiate(prefabEnemy,Vector3(mainCam.transform.position.x-10f,randomY,0),Quaternion.identity);
+		// Instantiate(prefabEnemy,Vector3(mainCam.transform.position.x+10f,mainCam.transform.position.y,0),Quaternion.identity);
 	}
 }
 
 function Update(){
-	randomGen = Random.Range(1,200);
-	if(Score.point < 10){
-		rate = 200;
+	randomGen = Random.Range(1,20);
+	if(Score.point < 10000){
+		rate = 2;
 	}
-	else if(Score.point < 20){
-		rate = 200;
+	else if(Score.point < 20000){
+		rate = 5;
 	}
-	else if(Score.point < 30){
-		rate = 200;
+	else if(Score.point < 30000){
+		rate = 10;
 	}
 	else{
-		rate = 200;
+		rate = 15;
 	}
 	if(randomGen < rate){
 		Invoke("Gen",1);
