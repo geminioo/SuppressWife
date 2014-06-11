@@ -21,7 +21,7 @@ public class Webcam : MonoBehaviour {
 				renderer.material.mainTexture = pic;
 				GameObject.Find("Face").gameObject.GetComponent<SpriteRenderer>().sprite = Sprite.Create(pic, new Rect(0, 0, pic.width, pic.height), new Vector2(0.5f, 0.5f));
 				webcam.Stop();
-				Application.LoadLevel("FirstScreen");
+				Application.LoadLevel("PlayScreen");
 			}/*
             if (GUI.Button(new Rect(Screen.width*57/100,Screen.height/2,Screen.width*20/100,Screen.height/10),"Pause")){
                 webcam.Pause();
