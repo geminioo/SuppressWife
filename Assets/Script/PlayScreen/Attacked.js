@@ -59,7 +59,9 @@ function OnTriggerEnter2D(col : Collider2D){
 
 function OnGUI(){
 	if(checkDie == 1){
-		windowRect = GUI.Window (0, windowRect, DoMyWindow, "Pause");
+		//windowRect = GUI.Window (0, new Rect(), DoMyWindow, "Pause");
+		Time.timeScale = 0.0;
+		GenMon.rate = 1000;
 	}
 }
 
