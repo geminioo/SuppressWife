@@ -17,7 +17,7 @@ function OnGUI(){
 	// scoreStyle.fontSize = 20;
 	// scoreStyle.alignment = TextAnchor.UpperRight;
 	GUI.skin = scoreStyle;
-    GUI.Label(Rect(Screen.width/2+60f,Screen.height/4-100f,100,50),point+"");
+    GUI.Label(Rect(Screen.width*3/5,Screen.height*1/50,Screen.width/10 ,Screen.height/8),point+"");
 
     if(Attacked.checkDie == 1){
     	// point = PlayerPrefs.GetInt("Player Score");

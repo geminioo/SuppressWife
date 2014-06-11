@@ -40,7 +40,7 @@ function OnGUI ()
 
   // GUI.Button (Rect(Screen.width/2-100, Screen.height/4, 500 ,500),"");
   print("Update");
-  if(GUI.Button (Rect(Screen.width-130, Screen.height/4-100, 70, 70),"") && !isPaused)
+  if(GUI.Button (Rect(Screen.width*10/11, Screen.height*1/100, Screen.width/12 ,Screen.height/8),"") && !isPaused)
     // if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && Input.GetTouch(0).position.x >= 1150 && !isPaused)
    {
       print("Paused");
