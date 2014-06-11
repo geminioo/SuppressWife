@@ -26,12 +26,17 @@ function OnGUI(){
     	// point = PlayerPrefs.GetInt("Player Score");
 		// PlayerPrefs.DeleteKey("Player Score");
 		if(storePoint == 0){
-			var playerCount = PlayerPrefs.GetInt("playerCount");
-			playerCount++;
-			PlayerPrefs.SetInt(playerCount+"", point);
-			PlayerPrefs.SetInt("playerCount", playerCount);
-			Debug.Log("Stored!");
-			storePoint = 1;
+			// var playerCount = PlayerPrefs.GetInt("playerCount");
+			// playerCount++;
+			// PlayerPrefs.SetInt(playerCount+"", point);
+			// PlayerPrefs.SetInt("playerCount", playerCount);
+			// Debug.Log("Stored!");
+			// storePoint = 1;
+			var oldPlayerPoint = PlayerPrefs.GetInt("PlayerPoint");
+			if(oldPlayerPoint<point){
+				PlayerPrefs.DeleteKey("PlayerPoint");
+				PlayerPrefs.SetInt("PlayerPoint", point);
+			}
 		}
 		// PlayerPrefs.DeleteAll();
 	}
