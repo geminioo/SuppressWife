@@ -16,6 +16,7 @@ function Update () {
 
 function OnTriggerEnter2D(col : Collider2D){
 	if(col.gameObject.tag == "Monster"){
+		audio.Play();
 		Destroy (col.gameObject); // destroy the projectile anyway
 		if(GameObject.Find("coinSprite_9")){
 			playerHeart = GameObject.Find("coinSprite_9");

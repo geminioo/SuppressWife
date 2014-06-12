@@ -17,6 +17,7 @@ public class Webcam : MonoBehaviour {
 		if (webcam.isPlaying){
 			GUI.skin = cameraSkin;
 			if(GUI.Button(new Rect(Screen.width*5/6,Screen.height*8/19,Screen.width/8,Screen.height/5), "")){
+				audio.Play ();
 				pic = new Texture2D(webcam.width,webcam.height);
 				pic.SetPixels(webcam.GetPixels());
 				pic.Apply();

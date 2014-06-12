@@ -13,6 +13,7 @@ function Update(){
 function OnTriggerEnter2D(col : Collider2D){
 	if(col.gameObject.tag == "Monster")
 	{
+		audio.Play();
 		Score.point += 1000;
 		Destroy(col.gameObject);
 		Destroy(this.gameObject);
