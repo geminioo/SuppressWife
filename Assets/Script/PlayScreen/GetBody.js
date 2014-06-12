@@ -7,7 +7,7 @@ function Start () {
 	if(type > 4){
 		type = 4;
 	}
-	this.gameObject.GetComponent(SpriteRenderer).sprite = GameObject.Find("Enemy" + type).gameObject.GetComponent(SpriteRenderer).sprite;
+	this.gameObject.GetComponent(SpriteRenderer).sprite = GameObject.Find("Enemy" + Random.Range(1,5)).gameObject.GetComponent(SpriteRenderer).sprite;
 }
 
 function Update () {

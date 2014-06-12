@@ -26,18 +26,18 @@ function Gen(){
 }
 
 function Update(){
-	randomGen = Random.Range(1,20);
-	if(Score.point < 10000){
-		rate = 2;
-	}
-	else if(Score.point < 20000){
+	randomGen = Random.Range(1,1000);
+	if(Score.point < 10){
 		rate = 5;
 	}
-	else if(Score.point < 30000){
+	else if(Score.point < 20){
 		rate = 10;
 	}
-	else{
+	else if(Score.point < 30){
 		rate = 15;
+	}
+	else{
+		rate = 20;
 	}
 	if(randomGen < rate){
 		Invoke("Gen",1);

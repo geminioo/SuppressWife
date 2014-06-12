@@ -70,8 +70,8 @@ function DoMyWindow (windowID : int) {
 	// RenderSettings.fogDensity = 1;
 	if(GUI.Button (Rect(Screen.width/8, Screen.height/7.5, Screen.width/4 ,Screen.height/10), "Continue"))
 	{
-   Time.timeScale = 1.0;
-   isPaused = false; 
+   		Time.timeScale = 1.0;
+   		isPaused = false; 
 	}
 	// if(GUI.Button (Rect(Screen.width/5, Screen.height/4, Screen.width/4 ,Screen.height/10), "Restart"))
 	// {
@@ -82,6 +82,7 @@ function DoMyWindow (windowID : int) {
 	// }
 	if(GUI.Button (Rect(Screen.width/8, Screen.height/3, Screen.width/4 ,Screen.height/10), "Menu"))
 	{
+	Time.timeScale = 1.0;
     Application.LoadLevel("FirstScreen");
 	}
 }
