@@ -10,7 +10,7 @@ var inPauseSkin : GUISkin;
 var windowRect : Rect;
  
 function Start(){
-	windowRect = Rect(Screen.width/6+30, Screen.height/6+10, 480 ,300);
+	windowRect = Rect(Screen.width/4.3, Screen.height/5, Screen.width/2,Screen.height/1.5);
     // GUI.Button (Rect(Screen.width/2-100, Screen.height/4, 500 ,500),"");
 
 }
@@ -68,25 +68,21 @@ function DoMyWindow (windowID : int) {
     // GUI.matrix = Matrix4x4.TRS (Vector3(0, 0, 0), Quaternion.identity, Vector3 (Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1)); 
  
 	// RenderSettings.fogDensity = 1;
-	if(GUI.Button (Rect(Screen.width/6+20, Screen.height/6, 180 ,30), "Quit"))
+	if(GUI.Button (Rect(Screen.width/8, Screen.height/7.5, Screen.width/4 ,Screen.height/10), "Continue"))
 	{
-	 print("Quit!");
-	 		Application.LoadLevel("FirstScreen");
-
-	 // Application.Quit();
+   Time.timeScale = 1.0;
+   isPaused = false; 
 	}
-	if(GUI.Button (Rect(Screen.width/6+20, Screen.height/6+40, 180 ,30), "Restart"))
+	// if(GUI.Button (Rect(Screen.width/5, Screen.height/4, Screen.width/4 ,Screen.height/10), "Restart"))
+	// {
+	//  print("Restart");
+	//  // Application.LoadLevel("SomeLevelHere");
+	//  // Time.timeScale = 1.0;
+	//  // isPaused = false;
+	// }
+	if(GUI.Button (Rect(Screen.width/8, Screen.height/3, Screen.width/4 ,Screen.height/10), "Menu"))
 	{
-	 print("Restart");
-	 // Application.LoadLevel("SomeLevelHere");
-	 // Time.timeScale = 1.0;
-	 // isPaused = false;
-	}
-	if(GUI.Button (Rect(Screen.width/6+20, Screen.height/6+80, 180 ,30), "Continue"))
-	{
-	 print("Continue");
-	 Time.timeScale = 1.0;
-	 isPaused = false;   
+    Application.LoadLevel("FirstScreen");
 	}
 }
 // if(GUI.Button (Rect((Screen.width)/2,640,140,70), "Continue", "button2"))

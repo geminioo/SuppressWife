@@ -17,6 +17,8 @@ function OnGUI(){
 	if(Attacked.checkDie == 1){
 		spriteRenderer.enabled = true;
 		GUI.skin = scoreSkin1;
+
+		GUI.Label(new Rect(Screen.width*0.3, Screen.height*3/7, Screen.width/2 ,Screen.height/6) ,Score.point+"");
 		if(GUI.Button(new Rect(Screen.width*2/5, Screen.height*5/7, Screen.width/4 ,Screen.height/10), "")){
 			Time.timeScale = 1.0;
 			GenMon.rate = 2;
