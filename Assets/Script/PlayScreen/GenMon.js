@@ -11,7 +11,7 @@ function Start () {
 }
 
 function Gen(){
-	var randomY = Random.Range(-2.2f,0.2f);
+	var randomY = Random.Range(-3f,-1f);
 	var randomSide =  Random.Range(0f,1f);
 	if(randomSide >=0.5){
 		side = 1;

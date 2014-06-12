@@ -27,7 +27,7 @@ function Start () {
 }
 
 function Update(){
-	if(left == 1){
+	/*if(left == 1){
 		if(transform.rotation.z > -10){
 			transform.rotation.z -= 0.05f;
 		}
@@ -42,5 +42,5 @@ function Update(){
 		else{
 			left = 1;
 		}
-	}
+	}*/
 }
